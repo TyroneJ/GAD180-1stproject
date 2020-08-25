@@ -24,7 +24,7 @@ public class updated : MonoBehaviour
     Vector3 temp;
     void Update()
     {
-        //velocity.z = Input.GetAxis("Vertical")*speed;
+        velocity.z = Input.GetAxis("Vertical")*speed;
         velocity.x = Input.GetAxis("Horizontal")*speed;
         if (Input.GetButtonDown("Jump"))
         {
@@ -41,11 +41,11 @@ public class updated : MonoBehaviour
         //if your line doesnt have GetComponent <RigidBody> then it doesnt belong in here
         velocity.y = GetComponent<Rigidbody>().velocity.y;
        
-        //if (jump)
-        //{
-        //    velocity.y = jumpspeed;
-        //    jump = false;
-        //}
+        if (jump)
+        {
+            velocity.y = jumpspeed;
+            jump = false;
+        }
         GetComponent<Rigidbody>().velocity = velocity;
     }
 }

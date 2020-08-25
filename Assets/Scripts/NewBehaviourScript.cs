@@ -10,6 +10,12 @@ public class NewBehaviourScript : MonoBehaviour
     public bool right = false;
     public bool jump = false;
 
+    public KeyCode upkey;
+    public KeyCode downkey;
+    public KeyCode leftkey;
+    public KeyCode rightkey;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,26 +28,23 @@ public class NewBehaviourScript : MonoBehaviour
 
         up = down = left = right = jump = false;
 
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(upkey))
         {
             up = true;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(leftkey))
         {
             left = true;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(downkey))
         {
             down = true;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(rightkey))
         {
             right = true;
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            jump = true;
-        }
+        
     }
 
     private void FixedUpdate()
@@ -69,11 +72,7 @@ public class NewBehaviourScript : MonoBehaviour
             GetComponent<Rigidbody>().velocity += new Vector3(0, 0, -10);
 
         }
-        if (jump)
-        {
-            GetComponent<Rigidbody>().velocity += new Vector3(0, 10, 0);
-
-        }
+       
     }
 
 }
