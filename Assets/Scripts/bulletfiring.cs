@@ -4,33 +4,37 @@ using UnityEngine;
 
 public class bulletfiring : MonoBehaviour
 {
-    
+
     public GameObject bulletmovement;
     public GameObject positionObject;
     Vector3 vel;
     public float speed;
-
+    float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
+
         vel.x = Input.GetAxis("Horizontal");
         vel.z = Input.GetAxis("Vertical");
-        if (Input.GetButtonDown("Space"))
+
+        if (time > 5)
         {
+
             RandomShooting();
 
             //push bullet forward
 
-            bulletmovement.GetComponent<Rigidbody>().velocity = new Vector3(3,0,1) ;
-
+            bulletmovement.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 1);
+            time = 0;
         }
+
     }
 
     public void RandomShooting()
@@ -47,11 +51,8 @@ public class bulletfiring : MonoBehaviour
 
         direction.Normalize();
 
-        obj.GetComponent<Rigidbody>().velocity = direction*speed;
-
-      
+        obj.GetComponent<Rigidbody>().velocity = direction * speed;
 
     }
-
-
+    
 }

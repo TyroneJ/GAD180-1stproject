@@ -15,20 +15,19 @@ public class bullet : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        /*
-         if(collision.gameObject.tag != "Destructable")
-         Destroy(collision.gameObject);
-         Destroy(this.gameObject);
-         */
+  
 
-        BigWall objectToDamage = collision.gameObject.GetComponent<BigWall>();
+        DamageScript objectToDamage = collision.gameObject.GetComponent<DamageScript>();
         if (objectToDamage != null)
         {
             objectToDamage.Damage(damage);
+            Destroy(this.gameObject);
         }
-
-        Destroy(this.gameObject);
-    
+        if (collision.gameObject.tag==("bullet"))
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 
     
