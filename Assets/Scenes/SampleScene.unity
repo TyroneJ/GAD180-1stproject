@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110743221}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.05, y: 1.12, z: -19.01}
+  m_LocalPosition: {x: 0.05, y: 1.12, z: -18.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2338041}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 607033316}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4a3e6665969434db4a75f8b4d3cbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 200
+  hp: 50
 --- !u!1 &656776663
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 656776666}
   - component: {fileID: 656776665}
   - component: {fileID: 656776668}
+  - component: {fileID: 656776669}
   m_Layer: 0
   m_Name: Walls (2)
   m_TagString: Untagged
@@ -530,6 +531,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 500
+--- !u!54 &656776669
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656776663}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &661687205
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +560,7 @@ GameObject:
   - component: {fileID: 661687208}
   - component: {fileID: 661687207}
   - component: {fileID: 661687210}
+  - component: {fileID: 661687211}
   m_Layer: 0
   m_Name: Walls (1)
   m_TagString: Untagged
@@ -638,6 +656,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deflectingVector: {x: -1.2, y: 1.2, z: 1.2}
   player: 0
+--- !u!54 &661687211
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661687205}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &678824780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019770623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 1.12, z: 19.25}
+  m_LocalPosition: {x: 0.05, y: 1.12, z: 20.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1110692511}
@@ -1179,6 +1213,7 @@ GameObject:
   - component: {fileID: 1066510399}
   - component: {fileID: 1066510398}
   - component: {fileID: 1066510401}
+  - component: {fileID: 1066510402}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -1272,7 +1307,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4a3e6665969434db4a75f8b4d3cbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 500
+--- !u!54 &1066510402
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066510396}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1110692510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110692510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.47}
+  m_LocalPosition: {x: 0, y: 0, z: -0.59}
   m_LocalScale: {x: 1.96, y: 2.19, z: 0.12}
   m_Children: []
   m_Father: {fileID: 1019770628}
@@ -1619,7 +1670,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 237b478e4ffb9784aa763eb5ca3ccc33, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
