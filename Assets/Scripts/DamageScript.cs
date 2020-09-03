@@ -15,5 +15,10 @@ public class DamageScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (hp <= 0)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
+    
 }
